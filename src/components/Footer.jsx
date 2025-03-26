@@ -30,7 +30,7 @@ function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-[#121212] text-white flex justify-between items-center py-4 px-7.5"
+      className="bg-zinc-900 text-white flex justify-between items-center py-4 px-7.5"
     >
       <div className="footer-left flex gap-5">
         <h5 className="current-year text-lg">&copy; {currentYear}</h5>
@@ -38,15 +38,15 @@ function Footer() {
       </div>
       <div className="footer-right flex gap-12">
         {socialLinks.map((link, index) => (
-          <a
+          <Link
             key={index}
             className="link uppercase text-sm font-semibold text-white no-underline"
-            href={link.href}
+            to={link.href}
             target="_blank"
             rel="noopener noreferrer"
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </div>
     </footer>

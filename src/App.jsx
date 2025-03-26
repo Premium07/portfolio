@@ -41,7 +41,7 @@ const App = () => {
 
   return (
     <div
-      className="w-full overflow-hidden"
+      className="w-full overflow-hidden relative"
       data-scroll-container
       ref={scrollRef}
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -51,7 +51,7 @@ const App = () => {
       <main id="main" className="w-full bg-zinc-900 overflow-hidden">
         <Hero />
         <Page2 />
-        <About />
+        <About cursor={<Cursor />} />
         <Footer />
       </main>
     </div>
