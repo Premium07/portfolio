@@ -1,8 +1,7 @@
 import React from "react";
 import { about } from "../../constants/data";
-import Cursor from "./Cursor";
 
-const About = ({ cursor }) => {
+const About = () => {
   return (
     <>
       {/* {cursor} */}

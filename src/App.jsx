@@ -1,13 +1,14 @@
 import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
 import Loader from "./components/Loader";
-import Cursor from "./components/Cursor";
 import Hero from "./components/Hero";
 import "remixicon/fonts/remixicon.css";
 import Page2 from "./components/PageTwo";
 import LocomotiveScroll from "locomotive-scroll";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import Cursor from "./components/Cursor";
+import ContactForm from "./components/ContactForm";
 
 const App = () => {
   const scrollRef = useRef(null);
@@ -47,11 +48,13 @@ const App = () => {
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       {loading && <Loader />}
-      <Cursor />
-      <main id="main" className="w-full bg-zinc-900 overflow-hidden">
+
+      <main id="main" className="w-full bg-zinc-900 overflow-hidden relative">
+        <Cursor />
         <Hero />
         <Page2 />
-        <About cursor={<Cursor />} />
+        <About />
+        <ContactForm />
         <Footer />
       </main>
     </div>

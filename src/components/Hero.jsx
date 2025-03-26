@@ -98,11 +98,11 @@ const Hero = () => {
             available for freelance
           </h5>
         </div>
-        <div className="bounding">
+        {/* <div className="bounding">
           <h5 className="bounding-elem text-right uppercase mt-[0.5vw] text-[1.1vw] leading-none">
             work from may 24'
           </h5>
-        </div>
+        </div> */}
       </div>
 
       <div
@@ -119,7 +119,7 @@ const Hero = () => {
           href="#"
           className="relative pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
-          PROTOPIE AMBASSADOR<i className="ri-arrow-right-up-line"></i>
+          DESIGNER<i className="ri-arrow-right-up-line"></i>
         </a>
         <div id="icons" className="flex gap-2.5">
           {icons.map((icon) => (
