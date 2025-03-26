@@ -1,7 +1,61 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
+import Loader from "./components/Loader";
+import Cursor from "./components/Cursor";
+import Hero from "./components/Hero";
+import "remixicon/fonts/remixicon.css";
+import Page2 from "./components/PageTwo";
+import LocomotiveScroll from "locomotive-scroll";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
 const App = () => {
-  return <div>App</div>;
+  const scrollRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Initialize Locomotive Scroll
+    let scroll;
+    if (scrollRef.current) {
+      scroll = new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+      });
+    }
+
+    // Simulate loading animation
+    const timer = setTimeout(() => {
+      gsap.to(".loader", {
+        top: "-100vh",
+        duration: 1.5,
+        onComplete: () => setLoading(false),
+      });
+    }, 1000);
+
+    // Cleanup function
+    return () => {
+      clearTimeout(timer);
+      if (scroll) scroll.destroy();
+    };
+  }, []);
+
+  return (
+    <div
+      className="w-full overflow-hidden"
+      data-scroll-container
+      ref={scrollRef}
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+    >
+      {loading && <Loader />}
+      <Cursor />
+      <main id="main" className="w-full bg-zinc-900 overflow-hidden">
+        <Hero />
+        <Page2 />
+        <About />
+        <Footer />
+      </main>
+    </div>
+  );
 };
 
 export default App;

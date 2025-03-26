@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: general sans;
+  src: url(fonts/GeneralSans-Regular.otf);
+}
+
+* {
+  font-family: "general sans";
+}
