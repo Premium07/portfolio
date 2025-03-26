@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: general sans;
-  src: url(fonts/GeneralSans-Regular.otf);
+  src: url(./assets/GeneralSans-Regular.otf);
 }
 
 * {
