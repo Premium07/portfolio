@@ -119,7 +119,7 @@ const Hero = () => {
           href="#"
           className="relative pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
-          DESIGNER<i className="ri-arrow-right-up-line"></i>
+          DEVELOPER<i className="ri-arrow-right-up-line"></i>
         </a>
         <div id="icons" className="flex gap-2.5">
           {icons.map((icon) => (

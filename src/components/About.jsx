@@ -7,10 +7,10 @@ const About = () => {
       {/* {cursor} */}
       <div
         id="about"
-        className="w-full bg-zinc-900 p-4 sm:p-[4vw] sm:pl-[20vw] text-white flex justify-between items-center gap-[4vw]"
+        className="w-full bg-zinc-900 p-4 sm:p-[4vw] sm:pl-[30vw] text-white flex justify-between items-center gap-[4vw]"
       >
         <div>
-          <img src="./premgif.gif" alt="" className="rounded-xl w-[340px]" />
+          <img src="./premgif.gif" alt="" className="rounded-full w-[340px]" />
         </div>
         <div id="text" className="w-full sm:w-1/2">
           <h5 className="opacity-60 mb-2.5">(ABOUT ME)</h5>
@@ -20,7 +20,7 @@ const About = () => {
           <a
             href="cv.pdf"
             download="resume"
-            className="resume-btn px-8 py-2 rounded-full border border-white no-underline text-white text-base font-semibold bg-[#121212] transition-all duration-300 cursor-pointer hover:bg-white hover:text-[#121212] hover:font-semibold"
+            className="bg-zinc-800 px-10 py-3 rounded-full cursor-pointer hover:bg-zinc-900 border border-zinc-700"
           >
             Download CV
           </a>

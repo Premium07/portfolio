@@ -15,7 +15,8 @@ export const icons = [
   },
 ];
 
-export const about = ` Welcome to my portfolio! I'm a passionate front-end developerx
+export const about = ` Welcome!
+ I'm a passionate Full Stack developerx
           dedicated to crafting visually stunning and user-friendly websites.
           With a keen eye for design and a strong command of HTML, CSS, and
           JavaScript, Library and Frameworks like ReactJS and NextJS. I

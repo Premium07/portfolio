@@ -48,9 +48,9 @@ const App = () => {
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       {loading && <Loader />}
+      <Cursor />
 
-      <main id="main" className="w-full bg-zinc-900 overflow-hidden relative">
-        <Cursor />
+      <main id="main" className="w-full bg-zinc-900 relative">
         <Hero />
         <Page2 />
         <About />
