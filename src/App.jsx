@@ -54,6 +54,7 @@ const App = () => {
         <Hero />
         <Page2 />
         <About />
+
         <ContactForm />
         <Footer />
       </main>

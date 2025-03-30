@@ -15,20 +15,8 @@ export const icons = [
   },
 ];
 
-export const about = ` Welcome!
- I'm a passionate Full Stack developerx
-          dedicated to crafting visually stunning and user-friendly websites.
-          With a keen eye for design and a strong command of HTML, CSS, and
-          JavaScript, Library and Frameworks like ReactJS and NextJS. I
-          specialize in transforming creative concepts into seamless digital
-          experiences. Whether it's building responsive layouts, enhancing user
-          interfaces, or ensuring cross-browser compatibility, I thrive on
-          creating engaging websites that leave a lasting impression. Explore my
-          portfolio to see firsthand how I blend creativity and code to elevate
-          online experiences. From intuitive navigation to eye-catching
-          animations, I take pride in every detail, striving to make the web a
-          more visually captivating and user-friendly space. Let's build
-          something extraordinary together!`;
+export const about = `
+Welcome! I'm a passionate Full Stack Web Developer dedicated to building high-performance and user-friendly web applications. On the frontend, I specialize in HTML, CSS, JavaScript, React.js, and Next.js, crafting visually appealing and responsive interfaces. On the backend, I work with Node.js, Express.js, PostgreSQL, and MongoDB to develop scalable, secure, and efficient server-side applications. From designing intuitive UIs to implementing RESTful APIs, database management, and ensuring cross-browser compatibility, I focus on delivering seamless digital experiences. Whether it's enhancing performance, integrating modern technologies, or building interactive features, I strive to create innovative web solutions as well as enhance the user experience and engagement also skilled on React Native for Mobile App Development. Let's build something amazing together! 🚀`;
 
 export const socialLinks = [
   {
@@ -55,5 +43,12 @@ export const socialLinks = [
     id: 5,
     label: "GITHUB",
     href: "https://github.com/Premium07",
+  },
+];
+
+export const Skills = [
+  {
+    label:
+      "HTML CSS JavaScript ReactJS NextJS NodeJS ExpressJS MongoDB PostgreSQL Tailwind CSS Framer Motion GSAP React Native",
   },
 ];

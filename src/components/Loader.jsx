@@ -26,8 +26,8 @@ const Loader = () => {
 
   return (
     <div className="loader fixed h-screen w-screen z-50 bg-gray-200 flex items-center flex-col justify-center ">
-      <div className="size-40 rounded-full flex items-center justify-center border-2 border-t-2 border-t-zinc-950 border-zinc-500 animate-spin"></div>
-      <h2 className="absolute z-10 text-[50px] ml-4 font-thin">{progress}%</h2>
+      <div className="size-40 rounded-full flex items-center justify-center border-2 border-t-2 border-t-zinc-950 border-zinc-500 shadow animate-spin"></div>
+      <h2 className="absolute z-10 text-[50px] font-thin ml-4">{progress}%</h2>
     </div>
   );
 };

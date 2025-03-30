@@ -19,15 +19,15 @@ const Cursor = () => {
 
   return (
     <div
-      className="mincir size-16 rounded-full z-20 absolute transition-all duration-100 ease-custom-bezier mix-blend-difference"
-      style={{
-        backgroundColor:
-          "rgba(255, 255, 255, 0.2)" /* Semi-transparent white */,
-        backdropFilter: "blur(10px)",
-        border: "1px solid rgba(255, 255, 255, 0.3)" /* Subtle white border */,
-        boxShadow:
-          "0 8px 32px 0 rgba(31, 38, 135, 0.37)" /* Optional: subtle shadow */,
-      }}
+      className="mincir size-16 rounded-full z-20 absolute bg-white transition-all duration-100 ease-custom-bezier mix-blend-difference"
+      // style={{
+      //   backgroundColor:
+      //     "rgba(255, 255, 255, 0.2)" /* Semi-transparent white */,
+      //   backdropFilter: "blur(10px)",
+      //   border: "1px solid rgba(255, 255, 255, 0.3)" /* Subtle white border */,
+      //   boxShadow:
+      //     "0 8px 32px 0 rgba(31, 38, 135, 0.37)" /* Optional: subtle shadow */,
+      // }}
     ></div>
   );
 };

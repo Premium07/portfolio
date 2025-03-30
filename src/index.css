@@ -8,3 +8,26 @@
 * {
   font-family: "general sans";
 }
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+  @keyframes slider {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - 20px));
+    }
+  }
+
+  .animate-slider {
+    animation: slider 20s linear infinite;
+  }
+}

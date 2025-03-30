@@ -49,9 +49,14 @@ const Hero = () => {
       >
         <Link
           to="/"
-          className="relative pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
+          className="relative text-xl font-semibold flex items-center gap-2 pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
           Prem Sagar Gupta
+          <img
+            src="./premgif.gif"
+            alt="profileImg"
+            className="size-8 rounded-full border border-zinc-700"
+          />
         </Link>
         <div className="navbar">
           <h3 className="text-white no-underline text-[1.2vw] cursor-pointer font-semibold">
@@ -91,11 +96,12 @@ const Hero = () => {
 
       <div
         id="third-heading"
-        className="flex flex-col items-end mt-20 pr-[50px]"
+        className="flex flex-col items-end mt-10 pr-[50px]"
       >
         <div className="bounding">
           <h5 className="bounding-elem text-right uppercase mt-[0.5vw] text-[1.1vw] leading-none">
             available for freelance
+            <span className="block mt-1 opacity-50">& Get Hired</span>
           </h5>
         </div>
         {/* <div className="bounding">
