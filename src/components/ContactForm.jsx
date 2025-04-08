@@ -242,7 +242,7 @@ const ContactFormGSAP = () => {
             <h2 className="text-[7vw] uppercase border-b font-semibold opacity-60">
               Let's Get
             </h2>
-            <h2 className="text-[5vw] uppercase opacity-60">
+            <h2 className="text-[5vw] uppercase opacity-80">
               In Touch<i className="ri-arrow-right-up-long-line"></i>
             </h2>
           </div>

@@ -47,7 +47,7 @@ export const socialLinks = [
   },
   {
     id: 2,
-    label: "TWITTER",
+    label: "X",
     href: "https://twitter.com/_Prem_ium",
   },
   {

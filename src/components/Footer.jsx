@@ -34,7 +34,10 @@ function Footer() {
     >
       <div className="footer-left flex gap-5">
         <h5 className="current-year text-lg">&copy; {currentYear}</h5>
-        <h5 className="current-time text-lg">{currentTime}</h5>
+        <h5 className="current-time text-lg">
+          <i class="ri-time-line"></i>
+          <span className="ml-2">{currentTime}</span>
+        </h5>
       </div>
       <div className="footer-right flex gap-12">
         {socialLinks.map((link, index) => (

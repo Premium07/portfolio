@@ -251,21 +251,24 @@ const SkillsSlider = () => {
         {/* Single slider that changes direction based on scroll */}
         <div className="relative w-full overflow-hidden" ref={sliderRef}>
           <div
-            className="flex items-center justify-center gap-16 py-10"
+            className="flex items-center justify-center gap-8 py-10"
             ref={sliderWrapperRef}
           >
             {skillsData.map((skill) => (
-              <div key={skill.id} className="flex flex-col  min-w-[150px]">
-                <div className="size-28 bg-zinc-800 rounded-xl flex items-center justify-center p-5 mb-4 border border-zinc-700 hover:border-white hover:scale-110 transition-all duration-300">
+              <div
+                key={skill.id}
+                className="flex flex-col items-center justify-center  min-w-[150px]"
+              >
+                <div className="size-28 bg-zinc-800 rounded-xl flex items-center justify-center p-4 mb-4 border border-zinc-700 hover:border-white hover:scale-110 transition-all duration-300">
                   <img
                     src={skill.logo}
                     alt={skill.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <span className="text-white text-base font-medium text-center">
+                <p className="text-white w-fit text-base font-medium pr-2 text-center">
                   {skill.name}
-                </span>
+                </p>
               </div>
             ))}
           </div>
