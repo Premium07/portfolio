@@ -1,7 +1,28 @@
 export const data = [
-  { id: 1, img: "./plug.png", title: "the plug" },
-  { id: 2, img: "./ixperience.png", title: "ixperience" },
-  { id: 3, img: "./hudu.png", title: "hudu" },
+  {
+    id: 1,
+    img: "./plug.png",
+    title: "socialx",
+    techStack: ["NextJS", "Prisma", "TypeScript", "PostgreSQL"],
+    github: "https://github.com/Premium07/socialx",
+    live: "https://socialx-gamma.vercel.app/",
+  },
+  {
+    id: 2,
+    img: "./ixperience.png",
+    title: "chat app",
+    techStack: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS", "Socket.io"],
+    github: "https://github.com/Premium07/MERN_ChatAPP",
+    live: "https://mern-chatapp-xxwx.onrender.com/",
+  },
+  {
+    id: 3,
+    img: "./hudu.png",
+    title: "vision pro",
+    techStack: ["JavaScript", "GSAP", "ScrollTrigger", "HTML", "CSS"],
+    github: "https://github.com/Premium07/AppleVisioProClone",
+    live: "https://premium07.github.io/AppleVisioProClone/",
+  },
 ];
 
 export const icons = [
@@ -46,9 +67,65 @@ export const socialLinks = [
   },
 ];
 
-export const Skills = [
+export const skillsData = [
   {
-    label:
-      "HTML CSS JavaScript ReactJS NextJS NodeJS ExpressJS MongoDB PostgreSQL Tailwind CSS Framer Motion GSAP React Native",
+    id: 1,
+    name: "HTML5",
+    logo: "/skills/html5.svg",
+  },
+  {
+    id: 2,
+    name: "CSS3",
+    logo: "/skills/css3.svg",
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+    logo: "/skills/javascript.svg",
+  },
+  {
+    id: 4,
+    name: "React.js",
+    logo: "/skills/react.svg",
+  },
+  {
+    id: 5,
+    name: "Next.js",
+    logo: "/skills/nextjs.svg",
+  },
+  {
+    id: 6,
+    name: "Express.js",
+    logo: "/skills/express.svg",
+  },
+  {
+    id: 7,
+    name: "Node.js",
+    logo: "/skills/nodejs.svg",
+  },
+  {
+    id: 8,
+    name: "MongoDB",
+    logo: "/skills/mongodb.svg",
+  },
+  {
+    id: 9,
+    name: "PostgreSQL",
+    logo: "/skills/postgresql.svg",
+  },
+  {
+    id: 10,
+    name: "Tailwind CSS",
+    logo: "/skills/tailwindcss.svg",
+  },
+  {
+    id: 11,
+    name: "Git/GitHub",
+    logo: "/skills/github.svg",
+  },
+  {
+    id: 12,
+    name: "GenAI",
+    logo: "/skills/ai.svg",
   },
 ];

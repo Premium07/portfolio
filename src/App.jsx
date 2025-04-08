@@ -6,6 +6,7 @@ import "remixicon/fonts/remixicon.css";
 import Page2 from "./components/PageTwo";
 import LocomotiveScroll from "locomotive-scroll";
 import About from "./components/About";
+import SkillsSlider from "./components/SkillsSlider";
 import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ContactForm from "./components/ContactForm";
@@ -54,7 +55,7 @@ const App = () => {
         <Hero />
         <Page2 />
         <About />
-
+        <SkillsSlider />
         <ContactForm />
         <Footer />
       </main>

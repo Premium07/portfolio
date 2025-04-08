@@ -1,8 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import emailjs from "@emailjs/browser";
+
+/*
+ * To set up EmailJS:
+ * 1. Create an account at https://www.emailjs.com/
+ * 2. Create a new Email Service (Gmail, Outlook, etc.)
+ * 3. Create an Email Template with template variables: {{name}}, {{email}}, and {{message}}
+ * 4. Get your Service ID, Template ID, and Public Key from the EmailJS dashboard
+ * 5. Replace the placeholder values in the handleSubmit function below
+ */
 
 const ContactFormGSAP = () => {
   const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null);
+
   const formSectionRef = useRef(null);
   const formRef = useRef(null);
   const headingRef = useRef(null);
@@ -10,8 +29,106 @@ const ContactFormGSAP = () => {
   const buttonRef = useRef(null);
   const toggleButtonRef = useRef(null);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const contactTemplateId = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
+    const autoreplyTemplateId = import.meta.env
+      .VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // First, send the contact email to you
+    emailjs
+      .sendForm(serviceId, contactTemplateId, formRef.current, publicKey)
+      .then((result) => {
+        console.log("Contact email sent successfully:", result.text);
+
+        // Check if email is valid before sending auto-reply
+        if (!formData.email || !formData.email.includes("@")) {
+          console.log(
+            "Skipping auto-reply due to invalid email:",
+            formData.email
+          );
+          return { text: "OK - No auto-reply sent due to invalid email" };
+        }
+
+        // Then, send the auto-reply email to the user
+        const templateParams = {
+          to_name: formData.name,
+          to_email: formData.email,
+          message: formData.message,
+          from_name: "Prem Sagar Gupta | Full Stack Developer", // Replace with your name or website name
+          reply_to: "premsagarg23@gmail.com", // Use your email as reply_to
+          email: formData.email, // Add email as a separate field (some templates use this)
+          user_email: formData.email, // Add user_email as another alternative
+          recipient: formData.email, // Add recipient as another alternative
+          // Social media links are hardcoded in the template
+        };
+
+        console.log("Sending auto-reply with params:", templateParams);
+
+        // Send auto-reply email using the REST API directly
+        return fetch("https://api.emailjs.com/api/v1.0/email/send", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            service_id: serviceId,
+            template_id: autoreplyTemplateId,
+            user_id: publicKey,
+            template_params: templateParams,
+          }),
+        }).then((response) => {
+          if (!response.ok) {
+            return response.text().then((text) => {
+              throw new Error(text);
+            });
+          }
+          return response.text();
+        });
+      })
+      .then((result) => {
+        console.log("Auto-reply email sent successfully:", result);
+        setSuccess(true);
+        setLoading(false);
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+        // Hide success message after 5 seconds
+        setTimeout(() => setSuccess(false), 5000);
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+
+        // Provide more specific error messages based on the error
+        if (error.text && error.text.includes("recipients address is empty")) {
+          setError(
+            "There was an issue with your email address. Please check and try again."
+          );
+        } else if (error.status === 429) {
+          setError("Too many requests. Please try again later.");
+        } else {
+          setError("Failed to send email. Please try again later.");
+        }
+
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -138,27 +255,60 @@ const ContactFormGSAP = () => {
               ref={(el) => (inputRefs.current[0] = el)}
               className="bg-zinc-800/50 px-10 py-4 cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
               type="text"
-              placeholder="Your Full name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              required
             />
             <input
               ref={(el) => (inputRefs.current[1] = el)}
               className="bg-zinc-800/50 px-10 py-4 cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Your Email"
+              required
             />
             <textarea
               ref={(el) => (inputRefs.current[2] = el)}
-              name=""
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               cols={30}
               rows={10}
               placeholder="Your Message"
               className="bg-zinc-800/50 resize-none px-10 py-4 cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
+              required
             ></textarea>
+
+            {error && (
+              <div className="text-red-500 mt-2 p-3 bg-red-100/10 rounded border border-red-500/20">
+                {error}
+              </div>
+            )}
+
+            {success && (
+              <div className="text-green-500 mt-2 p-3 bg-green-100/10 rounded border border-green-500/20">
+                Message sent successfully! You should receive a confirmation
+                email shortly.
+              </div>
+            )}
+
             <button
               ref={buttonRef}
-              className="bg-zinc-800/50 px-10 py-3 mt-2 text-lg cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 flex items-center justify-center gap-2"
+              type="submit"
+              disabled={loading}
+              className="bg-zinc-800/50 px-10 py-3 mt-2 text-lg cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit <i className="ri-arrow-right-up-long-line"></i>
+              {loading ? (
+                "Sending..."
+              ) : (
+                <>
+                  Submit <i className="ri-arrow-right-up-long-line"></i>
+                </>
+              )}
             </button>
           </form>
         </section>

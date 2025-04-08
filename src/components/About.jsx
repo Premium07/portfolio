@@ -7,7 +7,7 @@ const About = () => {
       {/* {cursor} */}
       <div
         id="about"
-        className="w-full bg-zinc-900 p-4 sm:p-[2vw] sm:pl-[30vh]  text-white flex justify-between items-center gap-[4vw]"
+        className="w-full bg-zinc-900 p-4 sm:p-[2vw] sm:pl-[30vh] pt-16 text-white flex justify-between items-center gap-[4vw]"
       >
         <div className="w-2/6 pl-20">
           <div className="columns-2 gap-4">
