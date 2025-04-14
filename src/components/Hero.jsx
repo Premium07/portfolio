@@ -52,16 +52,21 @@ const Hero = () => {
           className="relative text-xl font-semibold flex items-center gap-2 pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
           Prem Sagar Gupta
-          <img
+          {/* <img
             src="./premgif.gif"
             alt="profileImg"
             className="size-8 rounded-full border border-zinc-700"
-          />
+          /> */}
         </Link>
         <div className="navbar">
-          <h3 className="text-white no-underline text-[1.2vw] cursor-pointer font-semibold">
+          {/* <h3 className="text-white no-underline text-[1.2vw] cursor-pointer font-semibold">
             MENU +
-          </h3>
+          </h3> */}
+          <img
+            src="./premgif.gif"
+            alt="profileImg"
+            className="size-8 rounded-full border-2 border-zinc-500"
+          />
         </div>
       </nav>
 
