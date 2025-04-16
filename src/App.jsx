@@ -10,6 +10,7 @@ import SkillsSlider from "./components/SkillsSlider";
 import Footer from "./components/Footer";
 import Cursor from "./components/Cursor";
 import ContactForm from "./components/ContactForm";
+import Skill from "./components/Skill";
 
 const App = () => {
   const scrollRef = useRef(null);
@@ -54,8 +55,9 @@ const App = () => {
       <main id="main" className="w-full bg-zinc-900 relative">
         <Hero />
         <Page2 />
+        {/* <SkillsSlider /> */}
+        <Skill />
         <About />
-        <SkillsSlider />
         <ContactForm />
         <Footer />
       </main>

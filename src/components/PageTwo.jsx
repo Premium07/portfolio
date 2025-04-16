@@ -49,9 +49,9 @@ const Page2 = () => {
     <div
       ref={pageRef}
       id="page2"
-      className="py-[4vw] px-[2vw] w-full min-h-screen bg-zinc-900 text-white overflow-hidden"
+      className="py-[2vw] px-[2vw] w-full min-h-screen bg-zinc-900 text-white overflow-hidden"
     >
-      <h2 className="text-[2vw] uppercase opacity-70 text-center mb-4">
+      <h2 className="text-[1vw] uppercase opacity-70 text-center mb-4">
         Projects
       </h2>
       {data.map((item, index) => (

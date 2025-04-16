@@ -17,7 +17,7 @@ export const data = [
   },
   {
     id: 3,
-    img: "./hudu.png",
+    img: "./visionpro.jpg",
     title: "vision pro",
     techStack: ["JavaScript", "GSAP", "ScrollTrigger", "HTML", "CSS"],
     github: "https://github.com/Premium07/AppleVisioProClone",
@@ -125,6 +125,66 @@ export const skillsData = [
   },
   {
     id: 12,
+    name: "GenAI",
+    logo: "/skills/ai.svg",
+  },
+  {
+    id: 13,
+    name: "HTML5",
+    logo: "/skills/html5.svg",
+  },
+  {
+    id: 14,
+    name: "CSS3",
+    logo: "/skills/css3.svg",
+  },
+  {
+    id: 15,
+    name: "JavaScript",
+    logo: "/skills/javascript.svg",
+  },
+  {
+    id: 16,
+    name: "React.js",
+    logo: "/skills/react.svg",
+  },
+  {
+    id: 17,
+    name: "Next.js",
+    logo: "/skills/nextjs.svg",
+  },
+  {
+    id: 18,
+    name: "Express.js",
+    logo: "/skills/express.svg",
+  },
+  {
+    id: 19,
+    name: "Node.js",
+    logo: "/skills/nodejs.svg",
+  },
+  {
+    id: 20,
+    name: "MongoDB",
+    logo: "/skills/mongodb.svg",
+  },
+  {
+    id: 21,
+    name: "PostgreSQL",
+    logo: "/skills/postgresql.svg",
+  },
+  {
+    id: 22,
+    name: "Tailwind CSS",
+    logo: "/skills/tailwindcss.svg",
+  },
+  {
+    id: 23,
+    name: "Git/GitHub",
+    logo: "/skills/github.svg",
+  },
+  {
+    id: 24,
     name: "GenAI",
     logo: "/skills/ai.svg",
   },
