@@ -56,7 +56,7 @@ const Skill = () => {
 
   return (
     <section className="my-12 mt-5 container mx-auto px-20" ref={sectionRef}>
-      <h2 className="skills-heading text-white text-5xl font-bold text-center mb-8">
+      <h2 className="skills-heading text-white opacity-70 text-5xl font-bold text-center mb-8">
         My Skills
       </h2>
 
