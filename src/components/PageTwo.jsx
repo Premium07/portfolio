@@ -49,7 +49,7 @@ const Page2 = () => {
     <div
       ref={pageRef}
       id="page2"
-      className="py-[2vw] px-[2vw] w-full min-h-screen bg-zinc-900 text-white overflow-hidden"
+      className="py-[2vw] px-[2vw] w-full bg-zinc-900 text-white overflow-hidden"
     >
       <h2 className="text-[1vw] uppercase opacity-70 text-center mb-4">
         Projects
@@ -58,7 +58,9 @@ const Page2 = () => {
         <div
           key={index}
           ref={(el) => (elementsRef.current[index] = el)}
-          className={`element ${index === 2 ? "lastelem" : ""}
+          className={`element ${
+            index === data.length - 1 ? "lastelem border-b border-gray-300" : ""
+          }
             w-full ${
               index !== 0 ? "border-t border-gray-300" : ""
             } py-[1vw] px-[2vw]

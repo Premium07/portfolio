@@ -23,6 +23,14 @@ export const data = [
     github: "https://github.com/Premium07/AppleVisioProClone",
     live: "https://premium07.github.io/AppleVisioProClone/",
   },
+  {
+    id: 3,
+    img: "./enhance.jpg",
+    title: "Enhance-AI",
+    techStack: ["ReactJS", "Tailwind CSS"],
+    github: "https://github.com/Premium07/ai-image-enhancer/",
+    live: "https://ai-image-enhancer-bvhb.vercel.app/",
+  },
 ];
 
 export const icons = [
