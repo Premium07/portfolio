@@ -1,7 +1,7 @@
 export const data = [
   {
     id: 1,
-    img: "./plug.png",
+    img: "./socialx.jpeg",
     title: "socialx",
     techStack: ["NextJS", "Prisma", "TypeScript", "PostgreSQL"],
     github: "https://github.com/Premium07/socialx",
@@ -9,7 +9,7 @@ export const data = [
   },
   {
     id: 2,
-    img: "./ixperience.png",
+    img: "./chat.jpeg",
     title: "chat app",
     techStack: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS", "Socket.io"],
     github: "https://github.com/Premium07/MERN_ChatAPP",
