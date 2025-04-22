@@ -16,20 +16,20 @@ export const data = [
     live: "https://mern-chatapp-xxwx.onrender.com/",
   },
   {
+    id: 4,
+    img: "./enhance.jpg",
+    title: "Enhance-AI",
+    techStack: ["ReactJS", "Tailwind CSS"],
+    github: "https://github.com/Premium07/ai-image-enhancer/",
+    live: "https://ai-image-enhancer-bvhb.vercel.app/",
+  },
+  {
     id: 3,
     img: "./visionpro.jpg",
     title: "vision pro",
     techStack: ["JavaScript", "GSAP", "ScrollTrigger", "HTML", "CSS"],
     github: "https://github.com/Premium07/AppleVisioProClone",
     live: "https://premium07.github.io/AppleVisioProClone/",
-  },
-  {
-    id: 3,
-    img: "./enhance.jpg",
-    title: "Enhance-AI",
-    techStack: ["ReactJS", "Tailwind CSS"],
-    github: "https://github.com/Premium07/ai-image-enhancer/",
-    live: "https://ai-image-enhancer-bvhb.vercel.app/",
   },
 ];
 
