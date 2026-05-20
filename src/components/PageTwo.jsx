@@ -49,9 +49,9 @@ const Page2 = () => {
     <div
       ref={pageRef}
       id="page2"
-      className="py-[2vw] px-[2vw] w-full bg-zinc-900 text-white overflow-hidden"
+      className="py-6 sm:py-[2vw] px-3 sm:px-4 md:px-[2vw] w-full bg-zinc-900 text-white overflow-hidden"
     >
-      <h2 className="text-[1vw] uppercase opacity-70 text-center mb-4">
+      <h2 className="text-xs sm:text-sm md:text-base uppercase opacity-70 text-center mb-4">
         Projects
       </h2>
       {data.map((item, index) => (
@@ -63,14 +63,14 @@ const Page2 = () => {
           }
             w-full ${
               index !== 0 ? "border-t border-gray-300" : ""
-            } py-[1vw] px-[2vw]
-            flex items-center justify-between relative gap-4`}
+            } py-3 sm:py-4 md:py-[1vw] px-3 sm:px-4 md:px-[2vw]
+            flex flex-col sm:flex-row items-start sm:items-center justify-between relative gap-3 sm:gap-4`}
         >
-          <div className="flex flex-col z-20">
-            <h1 className="uppercase text-[7vw] opacity-70 relative z-20">
+          <div className="flex flex-col z-20 w-full sm:w-auto">
+            <h1 className="uppercase text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[7vw] opacity-70 relative z-20 leading-tight">
               {item.title}
             </h1>
-            <div className="flex flex-wrap gap-2 mt-2 max-w-md">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 max-w-sm md:max-w-md">
               {item.techStack.map((tech, techIndex) => (
                 <span
                   key={techIndex}
@@ -85,26 +85,26 @@ const Page2 = () => {
             ref={(el) => (imagesRef.current[index] = el)}
             src={item.img}
             alt={item.title}
-            className="absolute opacity-0 h-[150px] w-[150px] object-cover
+            className="hidden md:block absolute opacity-0 h-[100px] sm:h-[120px] md:h-[150px] w-[100px] sm:w-[120px] md:w-[150px] object-cover
             transition-opacity duration-500 ease-in-out transform
             -translate-x-1/2 -translate-y-1/2 z-0"
           />
-          <div className="flex items-center gap-4 relative z-20">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 relative z-20 w-full sm:w-auto">
             <a
               href={item.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm border border-zinc-700 px-3 py-1 rounded-full hover:bg-zinc-800 transition-colors duration-300 flex items-center gap-1"
+              className="text-xs sm:text-sm border border-zinc-700 px-2 sm:px-3 py-1 rounded-full hover:bg-zinc-800 transition-colors duration-300 flex items-center gap-1"
             >
-              <i className="ri-github-fill"></i> GitHub
+              <i className="ri-github-fill"></i> <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
               href={item.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm border border-zinc-700 px-3 py-1 rounded-full hover:bg-zinc-800 transition-colors duration-300 flex items-center gap-1"
+              className="text-xs sm:text-sm border border-zinc-700 px-2 sm:px-3 py-1 rounded-full hover:bg-zinc-800 transition-colors duration-300 flex items-center gap-1"
             >
-              <i className="ri-external-link-line"></i> Live
+              <i className="ri-external-link-line"></i> <span className="hidden sm:inline">Live</span>
             </a>
           </div>
         </div>

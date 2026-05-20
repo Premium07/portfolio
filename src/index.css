@@ -22,6 +22,64 @@ body {
   display: none;
 }
 
+/* Responsive Typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Touch-friendly sizes for mobile */
+@media (max-width: 768px) {
+  button, a, input, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Responsive spacing utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Improve readability on mobile */
+@media (max-width: 640px) {
+  body {
+    line-height: 1.6;
+  }
+}
+
+/* Responsive text overflow */
+@media (max-width: 640px) {
+  p, span, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Fix for landscape orientation on mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  #hero {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 @layer utilities {
   @keyframes slider {
     0% {
@@ -34,5 +92,24 @@ body {
 
   .animate-slider {
     animation: slider 20s linear infinite;
+  }
+
+  /* Responsive utility for responsive padding/margins */
+  @media (max-width: 640px) {
+    .responsive-padding {
+      padding: 1rem;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .responsive-padding {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .responsive-padding {
+      padding: 2rem;
+    }
   }
 }

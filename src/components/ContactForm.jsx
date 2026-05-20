@@ -232,28 +232,28 @@ const ContactFormGSAP = () => {
   }, [showForm]);
 
   return (
-    <div className="relative w-full bg-zinc-900 text-white flex justify-center items-center my-5 pb-10 flex-col">
+    <div className="relative w-full bg-zinc-900 text-white flex justify-center items-center my-5 pb-10 flex-col px-4 sm:px-0">
       {showForm && (
         <section
           ref={formSectionRef}
-          className="w-11/12 mx-auto flex justify-between items-center gap-4"
+          className="w-full sm:w-11/12 md:w-4/5 lg:w-3/4 mx-auto flex flex-col lg:flex-row justify-between items-start gap-4 sm:gap-6 md:gap-8"
         >
-          <div ref={headingRef} className="w-fit mr-10">
-            <h2 className="text-[7vw] uppercase border-b font-semibold opacity-60">
+          <div ref={headingRef} className="w-full lg:w-fit lg:mr-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[7vw] uppercase border-b font-semibold opacity-60 leading-tight">
               Let's Get
             </h2>
-            <h2 className="text-[5vw] uppercase opacity-80">
-              In Touch<i className="ri-arrow-right-up-long-line"></i>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[5vw] uppercase opacity-80 flex items-center gap-2">
+              In Touch<i className="ri-arrow-right-up-long-line text-xl sm:text-2xl md:text-3xl"></i>
             </h2>
           </div>
           <form
             ref={formRef}
-            className="w-1/2 flex flex-col gap-4 p-8 backdrop-filter backdrop-blur-md shadow-lg"
+            className="w-full lg:w-1/2 flex flex-col gap-3 sm:gap-4 p-4 sm:p-6 md:p-8 backdrop-filter backdrop-blur-md shadow-lg"
             onSubmit={handleSubmit}
           >
             <input
               ref={(el) => (inputRefs.current[0] = el)}
-              className="bg-zinc-800/50 px-10 py-4 cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
+              className="bg-zinc-800/50 px-4 sm:px-6 md:px-10 py-2 sm:py-3 md:py-4 text-sm sm:text-base cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
               type="text"
               name="name"
               value={formData.name}
@@ -263,7 +263,7 @@ const ContactFormGSAP = () => {
             />
             <input
               ref={(el) => (inputRefs.current[1] = el)}
-              className="bg-zinc-800/50 px-10 py-4 cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
+              className="bg-zinc-800/50 px-4 sm:px-6 md:px-10 py-2 sm:py-3 md:py-4 text-sm sm:text-base cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
               type="email"
               name="email"
               value={formData.email}
@@ -277,20 +277,20 @@ const ContactFormGSAP = () => {
               value={formData.message}
               onChange={handleChange}
               cols={30}
-              rows={10}
+              rows={8}
               placeholder="Your Message"
-              className="bg-zinc-800/50 resize-none px-10 py-4 cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
+              className="bg-zinc-800/50 resize-none px-4 sm:px-6 md:px-10 py-2 sm:py-3 md:py-4 text-sm sm:text-base cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 focus:outline-none"
               required
             ></textarea>
 
             {error && (
-              <div className="text-red-500 mt-2 p-3 bg-red-100/10 rounded border border-red-500/20">
+              <div className="text-red-500 mt-2 p-2 sm:p-3 bg-red-100/10 rounded border border-red-500/20 text-xs sm:text-sm">
                 {error}
               </div>
             )}
 
             {success && (
-              <div className="text-green-500 mt-2 p-3 bg-green-100/10 rounded border border-green-500/20">
+              <div className="text-green-500 mt-2 p-2 sm:p-3 bg-green-100/10 rounded border border-green-500/20 text-xs sm:text-sm">
                 Message sent successfully! You should receive a confirmation
                 email shortly.
               </div>
@@ -300,7 +300,7 @@ const ContactFormGSAP = () => {
               ref={buttonRef}
               type="submit"
               disabled={loading}
-              className="bg-zinc-800/50 px-10 py-3 mt-2 text-lg cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-zinc-800/50 px-6 sm:px-8 md:px-10 py-2 sm:py-2.5 md:py-3 mt-2 text-sm sm:text-base md:text-lg cursor-pointer hover:bg-zinc-900 border-b-2 border-zinc-700 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 "Sending..."
@@ -317,7 +317,7 @@ const ContactFormGSAP = () => {
       <button
         ref={toggleButtonRef}
         onClick={() => setShowForm(!showForm)}
-        className="bg-zinc-800 px-10 py-3 mt-4 rounded-full cursor-pointer hover:bg-zinc-900 border border-zinc-700"
+        className="bg-zinc-800 px-6 sm:px-10 py-2 sm:py-3 mt-4 rounded-full text-sm sm:text-base cursor-pointer hover:bg-zinc-900 border border-zinc-700"
       >
         {showForm ? <i className="ri-close-line"></i> : "Contact Me"}
       </button>

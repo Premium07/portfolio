@@ -41,15 +41,15 @@ const Hero = () => {
     <div
       ref={heroRef}
       id="hero"
-      className="relative w-full h-screen bg-zinc-900 text-white overflow-hidden"
+      className="relative w-full min-h-screen sm:h-screen bg-zinc-900 text-white overflow-hidden"
     >
       <nav
         id="nav"
-        className="w-full p-5 px-10 text-white flex justify-between items-center"
+        className="w-full p-3 sm:p-5 sm:px-10 text-white flex justify-between items-center"
       >
         <Link
           to="/"
-          className="relative text-xl font-semibold flex items-center gap-2 pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
+          className="relative text-xs sm:text-xl font-semibold flex items-center gap-2 pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
           Prem Sagar Gupta
           {/* <img
@@ -65,14 +65,14 @@ const Hero = () => {
           <img
             src="./premgif.gif"
             alt="profileImg"
-            className="size-8 rounded-full border-2 border-zinc-500"
+            className="size-5 sm:size-8 rounded-full border-2 border-zinc-500"
           />
         </div>
       </nav>
 
-      <div id="heading" className="mt-[90px]">
+      <div id="heading" className="mt-2 sm:mt-[90px] px-3 sm:px-0">
         <div className="bounding w-fit overflow-hidden">
-          <h1 className="bounding-elem ml-[50px] text-[10vw] uppercase font-black leading-none opacity-60 translate-y-[100%]">
+          <h1 className="bounding-elem ml-1 sm:ml-[50px] text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10vw] uppercase font-black leading-none opacity-60 translate-y-[100%]">
             FullStack
           </h1>
         </div>
@@ -81,18 +81,18 @@ const Hero = () => {
           <div className="bounding w-fit overflow-hidden">
             <h1
               id="heading2"
-              className="bounding-elem ml-[14vw] text-[10vw] uppercase font-black leading-none opacity-60 translate-y-[100%]"
+              className="bounding-elem ml-2 sm:ml-[14vw] text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[10vw] uppercase font-black leading-none opacity-60 translate-y-[100%]"
             >
               Developer
             </h1>
           </div>
           <div className="bounding w-fit overflow-hidden">
-            <h5 className="bounding-elem text-right translate-y-[100%] uppercase text-[1.1vw] flex items-center gap-[0.8vw]">
+            <h5 className="bounding-elem text-right translate-y-[100%] uppercase text-[10px] sm:text-sm md:text-base lg:text-lg flex items-center gap-1 sm:gap-[0.8vw]">
               based in nepal{" "}
               <img
                 src="./flag.png"
                 alt="Nepal flag"
-                className="w-[1vw] h-auto"
+                className="w-3 sm:w-[1vw] h-auto"
               />
             </h5>
           </div>
@@ -101,12 +101,12 @@ const Hero = () => {
 
       <div
         id="third-heading"
-        className="flex flex-col items-end mt-10 pr-[50px]"
+        className="flex flex-col items-end mt-1 sm:mt-10 pr-3 sm:pr-[50px]"
       >
         <div className="bounding">
-          <h5 className="bounding-elem text-right uppercase mt-[0.5vw] text-[1.1vw] leading-none">
+          <h5 className="bounding-elem text-right uppercase text-[9px] sm:text-sm md:text-base leading-none">
             available for freelance
-            <span className="block mt-1 opacity-50">& Get Hired</span>
+            <span className="block mt-0.5 sm:mt-1 opacity-50">& Get Hired</span>
           </h5>
         </div>
         {/* <div className="bounding">
@@ -118,31 +118,31 @@ const Hero = () => {
 
       <div
         id="hero-footer"
-        className="flex justify-between items-center absolute bottom-[3%] px-[2vw] w-full"
+        className="flex flex-col sm:flex-row justify-between items-start sm:items-center absolute bottom-1 sm:bottom-[3%] px-3 sm:px-[2vw] w-full gap-1 sm:gap-0"
       >
         <a
           href="#"
-          className="relative pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
+          className="relative text-xs sm:text-base pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
-          FREELANCER<i className="ri-arrow-right-up-line"></i>
+          FREELANCER<i className="ri-arrow-right-up-line text-xs sm:text-base"></i>
         </a>
         <a
           href="#"
-          className="relative pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
+          className="relative text-xs sm:text-base pb-0.5 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-px before:bg-white before:transition-all before:duration-300 before:ease-in hover:before:w-full"
         >
-          DEVELOPER<i className="ri-arrow-right-up-line"></i>
+          DEVELOPER<i className="ri-arrow-right-up-line text-xs sm:text-base"></i>
         </a>
-        <div id="icons" className="flex gap-2.5">
+        <div id="icons" className="flex gap-1.5 sm:gap-2.5">
           {icons.map((icon) => (
             <div
               key={icon.id}
-              className="group w-7 h-7 rounded-full bg-gray-500 flex items-center flex-col overflow-hidden cursor-pointer group"
+              className="group w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-gray-500 flex items-center flex-col overflow-hidden cursor-pointer group"
             >
               <i
-                className={`${icon.iconClass} -translate-y-full group-hover:translate-y-0 text-center text-2xl text-[#121212] transition-transform duration-200`}
+                className={`${icon.iconClass} -translate-y-full group-hover:translate-y-0 text-center text-lg sm:text-2xl text-[#121212] transition-transform duration-200`}
               />
               <i
-                className={`${icon.iconClass} -translate-y-full group-hover:translate-y-0 text-center text-2xl text-[#121212] transition-transform duration-200`}
+                className={`${icon.iconClass} -translate-y-full group-hover:translate-y-0 text-center text-lg sm:text-2xl text-[#121212] transition-transform duration-200`}
               />
             </div>
             // </div>

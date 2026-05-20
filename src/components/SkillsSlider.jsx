@@ -241,32 +241,32 @@ const SkillsSlider = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="w-full bg-zinc-900 py-20 overflow-hidden"
+      className="w-full bg-zinc-900 py-12 sm:py-16 md:py-20 overflow-hidden"
     >
-      <div className="container mx-auto px-10">
-        <h2 className="skills-heading text-white text-5xl font-bold text-center mb-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        <h2 className="skills-heading text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16">
           My Skills
         </h2>
 
         {/* Single slider that changes direction based on scroll */}
         <div className="relative w-full overflow-hidden" ref={sliderRef}>
           <div
-            className="flex items-center justify-center gap-8 py-10"
+            className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 py-6 sm:py-8 md:py-10"
             ref={sliderWrapperRef}
           >
             {skillsData.map((skill) => (
               <div
                 key={skill.id}
-                className="flex flex-col items-center justify-center  min-w-[150px]"
+                className="flex flex-col items-center justify-center min-w-[100px] sm:min-w-[120px] md:min-w-[150px]"
               >
-                <div className="size-28 bg-zinc-800 rounded-xl flex items-center justify-center p-4 mb-4 border border-zinc-700 hover:border-white hover:scale-110 transition-all duration-300">
+                <div className="size-20 sm:size-24 md:size-28 bg-zinc-800 rounded-xl flex items-center justify-center p-3 sm:p-4 mb-3 sm:mb-4 border border-zinc-700 hover:border-white hover:scale-110 transition-all duration-300">
                   <img
                     src={skill.logo}
                     alt={skill.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <p className="text-white w-fit text-base font-medium pr-2 text-center">
+                <p className="text-white w-fit text-xs sm:text-sm md:text-base font-medium pr-2 text-center">
                   {skill.name}
                 </p>
               </div>
