@@ -1,53 +1,296 @@
-# React + Vite
+# 🚀 Prem Sagar Gupta - Full Stack Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive portfolio website showcasing full stack web development expertise. Built with React, Vite, and cutting-edge web technologies.
 
-Currently, two official plugins are available:
+![Portfolio Preview](./public/skills/react.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Fully Responsive Design** - Optimized for mobile, tablet, and desktop screens
+- **Smooth Animations** - GSAP animations with ScrollTrigger for engaging user experience
+- **Smooth Scrolling** - Locomotive Scroll for fluid page navigation
+- **Interactive Projects Showcase** - Hover-enabled project preview with live links
+- **Skills Carousel** - Animated skills slider responding to scroll direction
+- **Contact Form** - EmailJS integration for direct messaging
+- **Custom Cursor** - Interactive cursor animation (desktop)
+- **Modern UI** - Built with Tailwind CSS for sleek design
+- **Performance Optimized** - Fast load times and smooth performance
+- **SEO Friendly** - Optimized meta tags and semantic HTML
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
 
-# EMAILjs
+### Frontend
+- **React 19** - UI library
+- **Vite 6** - Build tool and dev server
+- **Tailwind CSS 4** - Utility-first CSS framework
+- **GSAP 3** - Animation library
+- **Locomotive Scroll** - Smooth scrolling
+- **Framer Motion** - Alternative animation library
+- **Remix Icon** - Icon library
 
-# EmailJS Setup Guide
+### Backend Integration
+- **EmailJS** - Email service integration
+- **React Router DOM** - Client-side routing
 
-This guide will help you set up EmailJS to work with your portfolio contact form.
+### Development Tools
+- **ESLint** - Code linting
+- **Node.js** - Runtime environment
 
-## Step 1: Create an EmailJS Account
+## 📋 Prerequisites
 
-1. Go to [EmailJS](https://www.emailjs.com/) and sign up for a free account
+Before you begin, ensure you have installed:
+- **Node.js** (v18 or higher) - [Download](https://nodejs.org/)
+- **npm** (v9 or higher) - Comes with Node.js
+- **Git** - [Download](https://git-scm.com/)
+
+## 🚀 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Premium07/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5173`
+
+## 📧 EmailJS Setup
+
+To enable the contact form functionality:
+
+### Step 1: Create an EmailJS Account
+1. Visit [EmailJS](https://www.emailjs.com/) and create a free account
 2. Verify your email address
 
-## Step 2: Add an Email Service
-
-1. In the EmailJS dashboard, go to the "Email Services" tab
+### Step 2: Add an Email Service
+1. Go to "Email Services" in your dashboard
 2. Click "Add New Service"
 3. Choose your email provider (Gmail, Outlook, etc.)
-4. Follow the authentication steps to connect your email account
-5. Give your service a name (e.g., "Portfolio Contact Form")
-6. Note down the **Service ID** (it will look like "service_xxxxxxx")
+4. Complete the authentication process
+5. Note your **Service ID** (format: `service_xxxxxxx`)
 
-## Step 3: Create an Email Template
+### Step 3: Create Email Templates
+1. Go to "Email Templates"
+2. Create a template for contact form notifications
+   - Use variables: `{{name}}`, `{{email}}`, `{{message}}`
+   - Subject: `New Contact Form Submission from {{name}}`
+   - Note your **Template ID** (format: `template_xxxxxxx`)
+3. Create an auto-reply template for users
+   - Note the **Auto-reply Template ID**
 
-1. In the EmailJS dashboard, go to the "Email Templates" tab
-2. Click "Create New Template"
-3. Give your template a name (e.g., "Portfolio Contact Form")
-4. In the "Content" tab, paste the HTML from the `emailjs-template.html` file
-5. Make sure the template uses the variables `{{name}}`, `{{email}}`, and `{{message}}`
-6. Set the subject line (e.g., "New Contact Form Submission from {{name}}")
-7. Save the template
-8. Note down the **Template ID** (it will look like "template_xxxxxxx")
+### Step 4: Get Your Public Key
+1. Go to "Account" → "API Keys"
+2. Copy your **Public Key**
 
-## Step 4: Get Your Public Key
+### Step 5: Set Environment Variables
+Create a `.env.local` file in the project root:
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_CONTACT_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID=your_autoreply_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-1. In the EmailJS dashboard, go to the "Account" tab
-2. Find your **Public Key** in the API Keys section (it will look like "XXXXXXXXXXXXXXXXXX")
+## 📦 Available Scripts
 
-## Step 5: Update Your Environment Variables
+- `npm run dev` - Start development server with HMR
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint code quality checks
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── components/
+│   │   ├── About.jsx          # About section with images
+│   │   ├── ContactForm.jsx    # Contact form with EmailJS
+│   │   ├── Cursor.jsx         # Custom cursor animation
+│   │   ├── Footer.jsx         # Footer with social links
+│   │   ├── Hero.jsx           # Hero/landing section
+│   │   ├── Loader.jsx         # Loading animation
+│   │   ├── PageTwo.jsx        # Projects showcase
+│   │   ├── Skill.jsx          # Skills marquee
+│   │   └── SkillsSlider.jsx   # Skills carousel
+│   ├── assets/                # Images and static files
+│   ├── App.jsx                # Main app component
+│   ├── main.jsx               # Entry point
+│   └── index.css              # Global styles
+├── constants/
+│   └── data.js                # Portfolio data (projects, skills, etc.)
+├── public/                    # Static files
+├── index.html                 # HTML template
+├── vite.config.js             # Vite configuration
+├── eslint.config.js           # ESLint rules
+├── package.json               # Dependencies
+└── README.md                  # This file
+```
+
+## 🎯 Components Overview
+
+### Hero (`Hero.jsx`)
+- Landing section with animated heading
+- Navigation bar with profile image
+- Social media icons
+- Call-to-action buttons (Freelancer, Developer)
+- Responsive design for all screen sizes
+
+### Projects Showcase (`PageTwo.jsx`)
+- Grid layout of featured projects
+- Hover preview images (desktop)
+- Tech stack badges
+- Links to GitHub and live demos
+- Mobile-optimized layout
+
+### Skills (`Skill.jsx`)
+- Animated marquee display
+- Skill logos and names
+- Responsive grid
+
+### About Section (`About.jsx`)
+- Multi-column image gallery
+- Professional bio/description
+- CV download button
+- Responsive image layout
+
+### Contact Form (`ContactForm.jsx`)
+- Toggle-able form overlay
+- Email validation
+- Success/error messages
+- Powered by EmailJS
+- Mobile-friendly design
+
+### Footer (`Footer.jsx`)
+- Current year and time display
+- Social media links
+- Responsive layout
+
+## 🎨 Responsive Breakpoints
+
+- **Mobile** (`< 640px`) - `sm:`
+- **Tablet** (`640px - 1024px`) - `md:`, `lg:`
+- **Desktop** (`> 1024px`) - `xl:`
+
+The portfolio is fully optimized and tested across all screen sizes.
+
+## 🚀 Deployment
+
+### Deploy with Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com/)
+3. Set environment variables in Vercel dashboard
+4. Deploy automatically on push
+
+### Deploy with Netlify
+1. Build the project: `npm run build`
+2. Connect your GitHub to [Netlify](https://netlify.com/)
+3. Set build command: `npm run build`
+4. Set publish directory: `dist`
+5. Add environment variables in Netlify dashboard
+
+### Deploy with GitHub Pages
+1. Update `vite.config.js` with your repo name
+2. Run: `npm run build`
+3. Push the `dist` folder or use GitHub Actions
+
+## 🔧 Configuration
+
+### Customize Portfolio Data
+Edit `constants/data.js` to update:
+- Projects and their details
+- Skills and logos
+- Social media links
+- About section text
+- Custom icons
+
+### Customize Styles
+- Global styles: `src/index.css`
+- Component-specific: Use Tailwind classes
+- Animations: GSAP configuration in components
+
+## 🎬 Animations
+
+- **Page Load** - Progress bar loading animation
+- **Heading** - Staggered text reveal
+- **Scroll** - Locomotive Scroll for smooth navigation
+- **Projects** - Hover image animations
+- **Skills** - Direction-responsive marquee
+- **Custom Cursor** - Smooth tracking (desktop only)
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## ⚡ Performance Optimizations
+
+- Code splitting with Vite
+- Image optimization
+- Smooth animations with GSAP
+- Lazy loading capabilities
+- Responsive design reduces redundant assets
+- Minified and optimized production build
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a pull request
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👤 About the Developer
+
+**Prem Sagar Gupta**
+- Full Stack Developer based in Nepal
+- Specializing in React, Next.js, Node.js, and modern web technologies
+- Available for freelance projects
+- Open to new opportunities
+
+### Connect With Me
+- 💼 [LinkedIn](https://linkedin.com)
+- 🐙 [GitHub](https://github.com/Premium07)
+- 🐦 [Twitter](https://twitter.com)
+- 📧 Email: premsagarg23@gmail.com
+
+## 🙏 Acknowledgments
+
+- [GSAP](https://greensock.com/gsap/) for animations
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) for smooth scrolling
+- [Vite](https://vitejs.dev/) for the build tool
+- [React](https://react.dev/) for the UI library
+
+## 📞 Support
+
+If you have any questions or need assistance:
+1. Check the [Issues](https://github.com/Premium07/portfolio/issues) page
+2. Create a new issue with detailed information
+3. Contact via email: premsagarg23@gmail.com
+
+---
+
+**Made with ❤️ by Prem Sagar Gupta**
+
+Last Updated: May 2026
+
 
 1. Open the `.env` file in your project
 2. Replace the placeholder values with your actual EmailJS credentials:
