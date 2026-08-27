@@ -2,7 +2,7 @@
 
 A modern, responsive, and interactive portfolio website showcasing full stack web development expertise. Built with React, Vite, and cutting-edge web technologies.
 
-![Portfolio Preview](./public/skills/react.png)
+![Portfolio Preview] https://premsg.vercel.app/
 
 ## ✨ Features
 
@@ -60,7 +60,7 @@ Before you begin, ensure you have installed:
    ```bash
    npm run dev
    ```
-   The application will be available at `http://localhost:5173`
+   The application will be available at `https://premsg.vercel.app/`
 
 ## 📧 EmailJS Setup
 
