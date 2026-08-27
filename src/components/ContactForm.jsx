@@ -35,9 +35,17 @@ const ContactFormGSAP = () => {
     setError(null);
     setSuccess(false);
 
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+    if (!accessKey) {
+      setError("The contact form is not configured yet. Please email me directly.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const formData = new FormData(e.target);
-      formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
+      formData.append("access_key", accessKey);
+      formData.append("subject", "New portfolio contact message");
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
