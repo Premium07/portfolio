@@ -1,15 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import emailjs from "@emailjs/browser";
 
-/*
- * To set up EmailJS:
- * 1. Create an account at https://www.emailjs.com/
- * 2. Create a new Email Service (Gmail, Outlook, etc.)
- * 3. Create an Email Template with template variables: {{name}}, {{email}}, and {{message}}
- * 4. Get your Service ID, Template ID, and Public Key from the EmailJS dashboard
- * 5. Replace the placeholder values in the handleSubmit function below
- */
+
 
 const ContactFormGSAP = () => {
   const [showForm, setShowForm] = useState(false);
@@ -37,98 +29,37 @@ const ContactFormGSAP = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setSuccess(false);
 
-    // Get EmailJS credentials from environment variables
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const contactTemplateId = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
-    const autoreplyTemplateId = import.meta.env
-      .VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    try {
+      const formData = new FormData(e.target);
+      formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
 
-    // First, send the contact email to you
-    emailjs
-      .sendForm(serviceId, contactTemplateId, formRef.current, publicKey)
-      .then((result) => {
-        console.log("Contact email sent successfully:", result.text);
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-        // Check if email is valid before sending auto-reply
-        if (!formData.email || !formData.email.includes("@")) {
-          console.log(
-            "Skipping auto-reply due to invalid email:",
-            formData.email
-          );
-          return { text: "OK - No auto-reply sent due to invalid email" };
-        }
-
-        // Then, send the auto-reply email to the user
-        const templateParams = {
-          to_name: formData.name,
-          to_email: formData.email,
-          message: formData.message,
-          from_name: "Prem Sagar Gupta | Full Stack Developer", // Replace with your name or website name
-          reply_to: "premsagarg23@gmail.com", // Use your email as reply_to
-          email: formData.email, // Add email as a separate field (some templates use this)
-          user_email: formData.email, // Add user_email as another alternative
-          recipient: formData.email, // Add recipient as another alternative
-          // Social media links are hardcoded in the template
-        };
-
-        console.log("Sending auto-reply with params:", templateParams);
-
-        // Send auto-reply email using the REST API directly
-        return fetch("https://api.emailjs.com/api/v1.0/email/send", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            service_id: serviceId,
-            template_id: autoreplyTemplateId,
-            user_id: publicKey,
-            template_params: templateParams,
-          }),
-        }).then((response) => {
-          if (!response.ok) {
-            return response.text().then((text) => {
-              throw new Error(text);
-            });
-          }
-          return response.text();
-        });
-      })
-      .then((result) => {
-        console.log("Auto-reply email sent successfully:", result);
+      const data = await response.json();
+      if (response.ok && data.success) {
         setSuccess(true);
-        setLoading(false);
-        // Reset form
         setFormData({
           name: "",
           email: "",
           message: "",
         });
-        // Hide success message after 5 seconds
-        setTimeout(() => setSuccess(false), 5000);
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-
-        // Provide more specific error messages based on the error
-        if (error.text && error.text.includes("recipients address is empty")) {
-          setError(
-            "There was an issue with your email address. Please check and try again."
-          );
-        } else if (error.status === 429) {
-          setError("Too many requests. Please try again later.");
-        } else {
-          setError("Failed to send email. Please try again later.");
-        }
-
-        setLoading(false);
-      });
+      } else {
+        setError("Unable to send your message. Please try again.");
+      }
+    } catch {
+      setError("Unable to send your message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
